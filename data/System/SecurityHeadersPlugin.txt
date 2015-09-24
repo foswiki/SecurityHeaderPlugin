@@ -1,0 +1,61 @@
+%META:TOPICINFO{author="ProjectContributor" date="1420222138" format="1.1" version="1"}%
+---+!! %TOPIC%
+%$SHORTDESCRIPTION%
+
+%TOC%
+
+HTTP headers are included in every HTTP response from a web server. Setting the
+appropriate HTTP headers can reduce the risk of man-in-the-middle and
+cross-site-scripting attacks on a web application. You can also reduce
+information leaks about the web application configuration - vital data that
+gives a would-be attacker clues about potential vulnerabilities. Read on to
+find out how to set the appropriate headers in your Perl web application.
+
+The following headers are set:
+
+   * =X-Frame-Options=: protect site from being loaded into an frame or iframe ([[http://tools.ietf.org/html/rfc7034][specs]])
+   * =Strict-Transport-Security=: requester to load all content via HTTPS 
+   * =Content-Security-Policy=: sets a whitelist of domains from which content can be safely loaded ([[http://www.w3.org/TR/CSP/][specs]])
+
+IE-only headers:
+
+   * =X-Content-Type-Options=: disable mime sniffing, disabled by default in IE but enforced anyway.
+   * =X-Download-Options=: prevent IE from opening an HTML file directly
+   * =X-XSS-Protection=: turn on its XSS filter
+
+Deprecated headers:
+
+   * =X-Content-Security-Policy=: IE10+
+   * =X-Webkit-CSP=: iOS Safari 5.0-5.1
+
+These two headers can be switched on optionally to support browsers not yet using the standard hearders.
+
+For more information see also:
+
+   * [[https://securityheaders.com/][HTTP Headers for Website and Web Application Security]]
+   * [[http://content-security-policy.com/][Content Security Policy Reference]]
+   * [[http://caniuse.com/#feat=contentsecuritypolicy][caniuse.com]]
+
+
+---++ Installation Instructions
+
+%$INSTALL_INSTRUCTIONS%
+
+---++ Dependencies
+%$DEPENDENCIES%
+
+---++ Change History
+
+%TABLE{columnwidths="7em" tablewidth="100%"}%
+| | |
+
+%META:FORM{name="PackageForm"}%
+%META:FIELD{name="Author" title="Author" value="MichaelDaum"}%
+%META:FIELD{name="Version" title="Version" value="%$VERSION%"}%
+%META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
+%META:FIELD{name="Copyright" value="%$CREATEDYEAR%, MichaelDaum, All Rights Reserved"}%
+%META:FIELD{name="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%
+%META:FIELD{name="Repository" value="https://github.com/foswiki/SecurityHeadersPlugin"}%
+%META:FIELD{name="Home" value="http://foswiki.org/Extensions/SecurityHeadersPlugin"}%
+%META:FIELD{name="Support" value="http://foswiki.org/Support/SecurityHeadersPlugin"}%
+%META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/SecurityHeadersPlugin"}%
