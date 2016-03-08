@@ -53,39 +53,39 @@ $Foswiki::cfg{Http}{XSSProtection} = "1; mode=block";
 
 # **STRING CHECK="undefok emptyok"**
 # Default policy for loading content such as JavaScript, Images, CSS, Font's, AJAX requests, Frames, HTML5 Media 
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"default-src"} = "'none'"; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'default-src'} = "'none'"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources of JavaScript
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"script-src"} = "'self' 'unsafe-eval'";
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'script-src'} = "'self' 'unsafe-eval'";
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources of stylesheets.
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"style-src"} = "'self' 'unsafe-inline'";
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'style-src'} = "'self' 'unsafe-inline'";
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources of images
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"img-src"} = "'self'";
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'img-src'} = "'self' data:";
 
 # **STRING CHECK="undefok emptyok"**
 # Applies to XMLHttpRequest (AJAX), WebSocket or EventSource. If not allowed the browser emulates a 400 HTTP status code.
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"connect-src"}= "'self'"; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'connect-src'}= "'self'"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources of fonts.
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"font-src"} = "'self'"; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'font-src'} = "'self'"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources of plugins, eg &lt;object>, &lt;embed> or &lt;applet
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"object-src"} = "*"; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'object-src'} = "*"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources of audio and video, eg HTML5 &lt;audio>, &lt;video> elements.
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"media-src"} = "*"; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'media-src'} = "*"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Defines valid sources for loading frames.
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"frame-src"} = "*"; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'frame-src'} = "*"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Enables a sandbox for the requested resource similar to the iframe sandbox
@@ -93,11 +93,11 @@ $Foswiki::cfg{Http}{ContentSecurityPolicy}{"frame-src"} = "*";
 # and script execution is blocked. You can keep the sandbox value empty to keep
 # all restrictions in place, or add values: allow-forms allow-same-origin
 # allow-scripts, and allow-top-navigation
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"sandbox"} = ""; 
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'sandbox'} = ""; 
 
 # **STRING CHECK="undefok emptyok"**
 # Instructs the browser to POST a reports of policy failures to this URI. 
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{"report-uri"} = '$Foswiki::cfg{ScriptUrlPath}/rest/SecurityHeadersPlugin/report';
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'report-uri'} = '$Foswiki::cfg{ScriptUrlPath}/rest/SecurityHeadersPlugin/report';
 
 # **BOOLEAN LABEL="Enable deprecated CSP headers" CHECK="undefok emptyok"**
 # Switch this on to enable deprecated CSP headers for older browsers. This is
