@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '1.00';
-our $RELEASE = '08 Mar 2016';
+our $VERSION = '1.01';
+our $RELEASE = '09 Sep 2016';
 our $SHORTDESCRIPTION = 'Add HTTP security headers to protect against XSS attacks';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;

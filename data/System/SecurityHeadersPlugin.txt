@@ -45,15 +45,16 @@ For more information see also:
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  09 Sep 2016 | added child-src policty in addition to the now deprected frame-src |
 |  08 Mar 2016 | fixed xss protection |
 
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
 %META:FIELD{name="Copyright" title="Copyright" value="2015-2016 Michael Daum http://michaeldaumconsulting.com"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
-%META:FIELD{name="Home" title="Home" value="http://foswiki.org/Extensions/SecurityHeadersPlugin"}%
+%META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/SecurityHeadersPlugin"}%
 %META:FIELD{name="License" title="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%
 %META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/SecurityHeadersPlugin"}%
-%META:FIELD{name="Support" title="Support" value="http://foswiki.org/Support/SecurityHeadersPlugin"}%
+%META:FIELD{name="Support" title="Support" value="https://foswiki.org/Support/SecurityHeadersPlugin"}%
 %META:FIELD{name="Version" title="Version" value="%$VERSION%"}%

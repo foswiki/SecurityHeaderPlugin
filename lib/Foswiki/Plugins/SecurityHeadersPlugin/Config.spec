@@ -84,8 +84,13 @@ $Foswiki::cfg{Http}{ContentSecurityPolicy}{'object-src'} = "*";
 $Foswiki::cfg{Http}{ContentSecurityPolicy}{'media-src'} = "*"; 
 
 # **STRING CHECK="undefok emptyok"**
-# Defines valid sources for loading frames.
+# Defines valid sources for loading frames. Deprecated in modern browsers in
+# favour of child-src, which however is not yet understood by all browsers still in use.
 $Foswiki::cfg{Http}{ContentSecurityPolicy}{'frame-src'} = "*"; 
+
+# **STRING CHECK="undefok emptyok"**
+# Defines valid sources for loading frames.
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'child-src'} = "*"; 
 
 # **STRING CHECK="undefok emptyok"**
 # Enables a sandbox for the requested resource similar to the iframe sandbox
