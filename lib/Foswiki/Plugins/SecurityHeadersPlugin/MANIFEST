@@ -1,3 +1,4 @@
+!noci
 data/System/SecurityHeadersPlugin.txt 0644
 lib/Foswiki/Plugins/SecurityHeadersPlugin/Config.spec 0644
 lib/Foswiki/Plugins/SecurityHeadersPlugin/Core.pm 0644

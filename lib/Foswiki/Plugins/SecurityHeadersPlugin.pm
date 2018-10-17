@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# SecurityHeadersPlugin is Copyright (C) 2015-2016 Michael Daum http://michaeldaumconsulting.com
+# SecurityHeadersPlugin is Copyright (C) 2015-2018 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '1.01';
-our $RELEASE = '09 Sep 2016';
+our $VERSION = '1.10';
+our $RELEASE = '17 Oct 2018';
 our $SHORTDESCRIPTION = 'Add HTTP security headers to protect against XSS attacks';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
