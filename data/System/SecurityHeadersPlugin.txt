@@ -16,6 +16,7 @@ The following headers are set:
    * =X-Frame-Options=: protect site from being loaded into an frame or iframe ([[http://tools.ietf.org/html/rfc7034][specs]])
    * =Strict-Transport-Security=: requester to load all content via HTTPS 
    * =Content-Security-Policy=: sets a whitelist of domains from which content can be safely loaded ([[http://www.w3.org/TR/CSP/][specs]])
+   * =Referrer-Policy=: decide when to set the =Referrer= header ([[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy][documentation]])
 
 IE-only headers:
 
@@ -45,13 +46,18 @@ For more information see also:
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  26 Jan 2024 | added referrer policy; \
+                 added service worker allowed; \
+                 added more content security policies; \
+                 removed deprecated child source policy; \
+                 better defaults |
 |  17 Oct 2018 | more reasonable default settings |
 |  09 Sep 2016 | added child-src policty in addition to the now deprected frame-src |
 |  08 Mar 2016 | fixed xss protection |
 
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="2015-2018 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Copyright" title="Copyright" value="2015-2024 Michael Daum"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/SecurityHeadersPlugin"}%
 %META:FIELD{name="License" title="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%

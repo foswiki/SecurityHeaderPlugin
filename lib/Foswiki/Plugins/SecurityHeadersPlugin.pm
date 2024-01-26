@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# SecurityHeadersPlugin is Copyright (C) 2015-2018 Michael Daum http://michaeldaumconsulting.com
+# SecurityHeadersPlugin is Copyright (C) 2015-2024 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,9 +20,10 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '1.10';
-our $RELEASE = '17 Oct 2018';
+our $VERSION = '1.30';
+our $RELEASE = '%$RELEASE%';
 our $SHORTDESCRIPTION = 'Add HTTP security headers to protect against XSS attacks';
+our $LICENSECODE = '%$LICENSECODE%';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
 
@@ -50,11 +51,9 @@ sub getCore {
   return $core;
 }
 
-
 sub finishPlugin {
   undef $core;
 }
-
 
 sub modifyHeaderHandler {
   my ($headers, $query) = @_;
@@ -64,7 +63,12 @@ sub modifyHeaderHandler {
   if ($Foswiki::cfg{Http}{ContentSecurityPolicy}) {
     if (ref($Foswiki::cfg{Http}{ContentSecurityPolicy})) {
       while (my ($key, $val) = each %{$Foswiki::cfg{Http}{ContentSecurityPolicy}}) {
-        push @csp, "$key $val" if defined $val && $val ne '';
+        next unless defined $val;
+        if ($val =~ /^\s*(0|1|true|false|on|off)\s*$/i) {
+          push @csp, $key if Foswiki::Func::isTrue($val);
+        } else {
+          push @csp, "$key $val" if $val ne '';
+        }
       }
       $csp = join("; ", sort @csp);
     } else {
@@ -78,6 +82,8 @@ sub modifyHeaderHandler {
   $headers->{"Strict-Transport-Security"} = $Foswiki::cfg{Http}{StrictTransportSecurity} if $Foswiki::cfg{Http}{StrictTransportSecurity};
   $headers->{"X-Content-Type-Options"} = $Foswiki::cfg{Http}{ContentTypeOptions} if $Foswiki::cfg{Http}{ContentTypeOptions};
   $headers->{"Content-Security-Policy"} = $csp if $csp;
+  $headers->{"Service-Worker-Allowed"} = $Foswiki::cfg{Http}{ServiceWorkerAllowed} if $Foswiki::cfg{Http}{ServiceWorkerAllowed};
+  $headers->{"Referrer-Policy"} = $Foswiki::cfg{Http}{ReferrerPolicy} if $Foswiki::cfg{Http}{ReferrerPolicy};
 
   # IE only
   $headers->{"X-Download-Options"} = $Foswiki::cfg{Http}{DownloadOptions} if $Foswiki::cfg{Http}{DownloadOptions};

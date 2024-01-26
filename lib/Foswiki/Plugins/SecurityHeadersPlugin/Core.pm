@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# SecurityHeadersPlugin is Copyright (C) 2015-2018 Michael Daum http://michaeldaumconsulting.com
+# SecurityHeadersPlugin is Copyright (C) 2015-2024 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -23,12 +23,6 @@ use JSON ();
 
 use constant TRACE => 0; # toggle me
 
-sub writeDebug {
-  return unless TRACE;
-  #Foswiki::Func::writeDebug("SecurityHeadersPlugin::Core - $_[0]");
-  print STDERR $_[0]."\n";
-}
-
 sub new {
   my $class = shift;
 
@@ -42,7 +36,7 @@ sub new {
 sub restReport {
   my ($this, $session, $params, $topic, $web) = @_;
 
-  #writeDebug("called restReport()");
+  #_writeDebug("called restReport()");
 
   my $request = $session->{request};
   my $data = $request->param("POSTDATA");
@@ -51,7 +45,7 @@ sub restReport {
   my $report = JSON::decode_json($data);
 
   unless (defined $report->{"csp-report"}) {
-    writeDebug("woops, invalid csp-report");
+    _writeDebug("woops, invalid csp-report");
     return;
   }
 
@@ -64,8 +58,15 @@ sub restReport {
   return unless @result;
   my $msg = "CSP-Report: ".join(", ", @result); 
 
-  writeDebug($msg);
+  _writeDebug($msg);
   Foswiki::Func::writeWarning($msg);
 }
+
+sub _writeDebug {
+  return unless TRACE;
+  #Foswiki::Func::_writeDebug("SecurityHeadersPlugin::Core - $_[0]");
+  print STDERR $_[0]."\n";
+}
+
 
 1;
