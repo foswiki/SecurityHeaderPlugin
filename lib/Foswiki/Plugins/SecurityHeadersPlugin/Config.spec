@@ -85,7 +85,7 @@ $Foswiki::cfg{Http}{ContentSecurityPolicy}{'style-src'} = "'self' 'unsafe-inline
 
 # **STRING 100 CHECK="undefok emptyok"**
 # Defines valid sources of images
-$Foswiki::cfg{Http}{ContentSecurityPolicy}{'img-src'} = "'self' data:";
+$Foswiki::cfg{Http}{ContentSecurityPolicy}{'img-src'} = "'self' data: blob:";
 
 # **STRING 100 CHECK="undefok emptyok"**
 # Applies to XMLHttpRequest (AJAX), WebSocket or EventSource. If not allowed the browser emulates a 400 HTTP status code.

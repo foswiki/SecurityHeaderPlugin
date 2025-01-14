@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1539768167" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" date="1736877329" format="1.1" version="1"}%
 ---+!! %TOPIC%
 %FORMFIELD{"Description"}%
 
@@ -46,6 +46,7 @@ For more information see also:
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  14 Jan 2025 | add blob: to default img-src |
 |  26 Jan 2024 | added referrer policy; \
                  added service worker allowed; \
                  added more content security policies; \
@@ -57,7 +58,7 @@ For more information see also:
 
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="2015-2024 Michael Daum"}%
+%META:FIELD{name="Copyright" title="Copyright" value="2015-2025 Michael Daum"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/SecurityHeadersPlugin"}%
 %META:FIELD{name="License" title="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%

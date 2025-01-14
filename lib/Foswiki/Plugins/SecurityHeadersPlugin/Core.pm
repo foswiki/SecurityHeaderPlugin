@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# SecurityHeadersPlugin is Copyright (C) 2015-2024 Michael Daum http://michaeldaumconsulting.com
+# SecurityHeadersPlugin is Copyright (C) 2015-2025 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
